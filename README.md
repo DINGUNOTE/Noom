@@ -1,2 +1,12 @@
-# Noom
-Zoom clone, WebSockets, SocketIO, WebRTC use only JS
+# Zoom clone coding using JavaScript only
+
+## 📌 Skills
+
+## 📌 Deploy URL
+
+## 📌 File Path
+
+## 📌 Reference
+> [https://nomadcoders.co/noom/](https://nomadcoders.co/noom/)
+
+
