@@ -2,7 +2,13 @@
 
 ## 📌 Skills
 
-- NodeJS, Express, Pug, nodemon, Babel
+- ### Front-end
+
+  - Only JS
+
+- ### Back-end
+
+  - NodeJS, Express, Pug, nodemon, Babel
 
 ## 📌 Deploy URL
 
