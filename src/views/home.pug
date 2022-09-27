@@ -4,14 +4,17 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
-    link(rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css")
-    link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.11/mvp.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
+    link(rel="stylesheet", as="style" crossorigin, href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css")
+    link(rel="stylesheet", href="https://unpkg.com/mvp.css@1.11/mvp.css")
     title Noom
   body
     style body{font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;}
     header
       h1 Noom
     main
-      h2 Welcome to Noom
+      ul
+      form
+        input(type="text", placeholder="write a msg", required)
+        button Send
     script(src="/public/js/app.js")

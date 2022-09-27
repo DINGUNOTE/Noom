@@ -1,5 +1,8 @@
 const socket = new WebSocket(`ws://${window.location.host}`);
 
+const $ul = document.querySelector('ul');
+const $form = document.querySelector('form');
+
 socket.addEventListener('open', () => console.log('Connected to Server 😀'));
 
 socket.addEventListener('message', (message) => {
@@ -13,3 +16,12 @@ socket.addEventListener('close', () =>
 setTimeout(() => {
   socket.send('hello from the browser!');
 }, 1000);
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const $input = $form.querySelector('input');
+  socket.send($input.value);
+  $input.value = '';
+};
+
+$form.addEventListener('submit', handleSubmit);
