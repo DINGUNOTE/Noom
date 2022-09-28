@@ -9,7 +9,3 @@
 - ### Back-end
 
   - NodeJS, Express, Pug, nodemon, Babel
-
-## 📌 Deploy URL
-
-## 📌 File Path
