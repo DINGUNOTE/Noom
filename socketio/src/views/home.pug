@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
+    link(rel="stylesheet", as="style" crossorigin, href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/variable/pretendardvariable.css")
+    link(rel="stylesheet", href="https://unpkg.com/mvp.css@1.11/mvp.css")
+    link(rel="stylesheet", href="/public/css/style.css")
+    title Noom
+  body
+    header
+      h1 Noom
+    main
+      form#nickname
+        input(type="text", placeholder="write a nickname", required)
+        button Save
+      ul
+      form#message
+        input(type="text", placeholder="write a message", required)
+        button Send
+    script(src="/public/js/app.js")
