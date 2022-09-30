@@ -24,3 +24,7 @@ form {
   align-items: center;
   gap: 0.5rem;
 }
+
+form button {
+  flex-shrink: 0;
+}
