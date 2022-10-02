@@ -26,15 +26,21 @@
   - 자동으로 백엔드 socket.io와 연결해주는 function
   - 알아서 socket.io를 실행하고 있는 서버를 찾는다.
 
-  ### emit()
+  ### socket.emit()
 
   - 이벤트를 전달하기 위해서 사용되는 function
   - 첫 번째 인자로 이벤트 명, 두 번째 인자부터 보내고 싶은 payload, 마지막 인자로 함수가 들어가게 된다면, 그 함수는 서버에서 호출하는 callback function이 된다.
   - 전달 된 콜백 함수는 백엔드에서 호출된 후에 프론트엔드에서 실행된다. (백엔드에서 실행은 X)
 
-  ### onAny(callback)
+  ### socket.onAny(callback)
 
   - 모든 이벤트를 수신할 수 있다.
+
+  ### Adapter
+
+  - 다른 서버들 사이에 실시간 어플리케이션을 동기화한다.
+  - 이벤트가 모든 클라이언트로 올바르게 라우팅되도록 하기 위해서 사용한다.
+  - 현재 socket의 아이디(sids), rooms 등의 정보를 알 수 있다.
 
 ## 📌 Reference
 
