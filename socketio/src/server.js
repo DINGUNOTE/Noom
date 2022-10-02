@@ -24,8 +24,9 @@ wsServer.on('connection', (socket) => {
   });
 
   // 채팅 방에 입장했을 때
-  socket.on('enterRoom', (roomName, done) => {
+  socket.on('enterRoom', (nickname, roomName, done) => {
     socket.join(roomName);
+    socket['nickname'] = nickname;
     done();
     socket.to(roomName).emit('welcome', socket.nickname);
   });
