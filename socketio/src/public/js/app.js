@@ -58,6 +58,29 @@ const handleMessageSubmit = (event) => {
 
 $form.addEventListener('submit', handleRoomSubmit);
 
-socket.on('welcome', (user) => sendMessage(`${user} joined 😀`));
-socket.on('bye', (user) => sendMessage(`${user} left 😭`));
+socket.on('welcome', (user, newCount) => {
+  sendMessage(`${user} joined 😀`);
+  const roomTitle = $room.querySelector('h3');
+  roomTitle.innerText = `Room Name: ${roomName} (${newCount})`;
+});
+socket.on('bye', (user, newCount) => {
+  sendMessage(`${user} left 😭`);
+  const roomTitle = $room.querySelector('h3');
+  roomTitle.innerText = `Room Name: ${roomName} (${newCount})`;
+});
 socket.on('newMessage', sendMessage);
+
+// room 갯수를 체크해서 화면에 표시
+socket.on('roomChange', (rooms) => {
+  const roomList = $robby.querySelector('ul');
+
+  roomList.innerHTML = '';
+  if (rooms.length === 0) {
+    return;
+  }
+  rooms.forEach((room) => {
+    const $li = document.createElement('li');
+    $li.innerText = room;
+    roomList.append($li);
+  });
+});
