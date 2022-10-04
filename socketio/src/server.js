@@ -1,5 +1,6 @@
 import http from 'http';
 import { Server } from 'socket.io';
+import { instrument } from '@socket.io/admin-ui';
 import express from 'express';
 
 const app = express();
@@ -15,7 +16,16 @@ app.get('/*', (_, res) => res.redirect('/'));
 const handleListen = () => console.log(`Listening on https://localhost:3000/`);
 
 const httpServer = http.createServer(app);
-const wsServer = new Server(httpServer);
+const wsServer = new Server(httpServer, {
+  cors: {
+    origin: ['https://admin.socket.io'],
+    credentials: true,
+  },
+});
+
+instrument(wsServer, {
+  auth: false,
+});
 
 // 서버에서 public room만 반환
 const publicRooms = () => {
