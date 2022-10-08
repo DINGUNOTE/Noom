@@ -46,6 +46,37 @@
   - 이벤트가 모든 클라이언트로 올바르게 라우팅되도록 하기 위해서 사용한다.
   - 현재 sids(socket의 아이디들), rooms 등의 정보를 알 수 있다.
 
+  ### Admin UI
+
+  - @socket.io/admin-ui를 설치하게 되면 현재 SocketIO 서버의 서버 상태와 클라이언트 목록, 방의 목록, 소켓들의 상태와 발생된 이벤트들을 확인하고 제어할 수 있다.
+
+  ```bash
+  npm i @socket.io/admin-ui
+  ```
+
+  ```javascript
+  const { createServer } = require('http');
+  const { Server } = require('socket.io');
+  const { instrument } = require('@socket.io/admin-ui');
+
+  const httpServer = createServer();
+
+  const io = new Server(httpServer, {
+    cors: {
+      origin: ['https://admin.socket.io'],
+      credentials: true,
+    },
+  });
+
+  instrument(io, {
+    auth: false,
+  });
+
+  httpServer.listen(3000);
+  ```
+
+## 💡 WebRTC
+
 ## 📌 Reference
 
 > [https://nomadcoders.co/noom/](https://nomadcoders.co/noom/)
